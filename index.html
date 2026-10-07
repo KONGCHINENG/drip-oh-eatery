@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drip Oh Eatery — Kedai Makan & Slow Coffee, Ipoh</title>
+<meta name="description" content="Drip Oh Eatery, 50 Jalan Dato Mahmud, Ipoh. Nasi goreng, mee kari, creamy pasta, chicken chop, tiramisu and good coffee. Open Tue–Sun, 12pm–10pm.">
+<meta name="theme-color" content="#F2EBDD">
+<meta property="og:title" content="Drip Oh Eatery — Ipoh">
+<meta property="og:description" content="Kedai makan with a chill soul. Big plates, slow coffee, a very good playlist. 50 Jln Dato Mahmud, Ipoh.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3C16 3 6 15 6 21a10 10 0 0 0 20 0C26 15 16 3 16 3z' fill='%23B4441C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2EBDD;
+  --paper-2:#E9DFCC;
+  --card:#FAF6EE;
+  --ink:#24170F;
+  --ink-2:#5A4636;
+  --ink-3:#7A6553;
+  --chili:#B4441C;
+  --chili-deep:#8E3212;
+  --pandan:#4C6A3A;
+  --butter:#E8B649;
+  --line:rgba(36,23,15,.18);
+  --display:"Fraunces", Georgia, serif;
+  --sans:"Instrument Sans", system-ui, sans-serif;
+  --hand:"Caveat", cursive;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --gutter:clamp(16px, 4vw, 56px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme: light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* paper grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.38;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .14 0 0 0 0 .09 0 0 0 0 .06 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+a{color:inherit}
+img,svg{display:block}
+:focus-visible{outline:2px solid var(--chili);outline-offset:3px;border-radius:2px}
+.wrap{padding-inline:var(--gutter);max-width:1440px;margin-inline:auto}
+.hand{font-family:var(--hand);font-weight:500;color:var(--chili);line-height:1.1}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px var(--gutter);
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.nav.scrolled{border-bottom-color:var(--line)}
+.brand{display:flex;align-items:baseline;gap:6px;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.35rem;letter-spacing:-.02em;font-variation-settings:"SOFT" 100,"WONK" 1}
+.brand svg{width:12px;height:16px;align-self:center;transform:translateY(1px)}
+.brand em{font-style:italic;font-weight:400;color:var(--chili)}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;font-size:.92rem;color:var(--ink-2);position:relative;padding:10px 0}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:1px;background:var(--chili);transition:right .3s var(--ease)}
+.nav ul a:hover{color:var(--ink)}
+.nav ul a:hover::after{right:0}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 22px;
+  border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;
+  transition:transform .25s var(--ease), background .25s, color .25s;cursor:pointer;border:0;
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--chili);transform:translateY(-2px) rotate(-1deg)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:860px){ .nav ul{display:none} .nav .btn{padding:0 16px;min-height:44px} .nav .btn span{display:none} }
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding-top:clamp(36px,7vw,90px);padding-bottom:clamp(48px,8vw,110px)}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:10px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--ink-3);position:relative}
+.dot.open{background:var(--pandan)}
+.dot.open::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--pandan);animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{transform:scale(.5);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
+.title{
+  font-family:var(--display);
+  font-weight:500;
+  font-size:clamp(5.2rem, 19vw, 17.5rem);
+  line-height:.82;
+  letter-spacing:-.055em;
+  margin-top:clamp(28px,5vw,56px);
+  font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;
+  position:relative;
+}
+.title .l1{display:block;position:relative;width:max-content}
+.title .l2{display:block;padding-left:clamp(14vw, 30vw, 520px);font-style:italic;font-weight:300;color:var(--chili);margin-top:-.04em}
+.drop{
+  position:absolute;width:.11em;height:.15em;
+  left:calc(100% - .19em);top:.84em;
+  animation:drip 4.2s cubic-bezier(.55,0,.8,.4) infinite;
+  transform-origin:top center;
+}
+@keyframes drip{
+  0%,30%{transform:translateY(0) scaleY(.2);opacity:0}
+  42%{transform:translateY(0) scaleY(1);opacity:1}
+  55%{transform:translateY(.05em) scaleY(1.15);opacity:1}
+  80%{transform:translateY(.42em) scaleY(1);opacity:1}
+  86%,100%{transform:translateY(.46em) scaleY(.3);opacity:0}
+}
+.hero-note{
+  position:absolute;right:var(--gutter);top:clamp(190px,26vw,420px);
+  transform:rotate(-6deg);font-size:clamp(1.4rem,2.3vw,2rem);max-width:13ch;text-align:left
+}
+.hero-note svg{width:70px;height:46px;margin:4px 0 0 30px;color:var(--chili)}
+.hero-grid{
+  display:grid;grid-template-columns:repeat(12,1fr);gap:24px;
+  margin-top:clamp(36px,6vw,72px);align-items:end
+}
+.lede{grid-column:1 / span 5;font-family:var(--display);font-size:clamp(1.25rem,1.9vw,1.6rem);line-height:1.35;font-weight:350;font-variation-settings:"opsz" 30,"SOFT" 50;letter-spacing:-.01em}
+.lede b{font-weight:500;font-style:italic}
+.hero-cta{grid-column:7 / span 6;display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center}
+.hero-cta .rating{display:flex;align-items:center;gap:10px;margin-left:8px}
+.rating strong{font-family:var(--display);font-size:2rem;font-weight:500;letter-spacing:-.03em;line-height:1}
+.stars{display:flex;gap:2px;color:var(--butter)}
+.stars svg{width:14px;height:14px}
+
+.stamp{
+  position:absolute;left:clamp(38%,46%,52%);top:clamp(120px,18vw,300px);width:clamp(96px,11vw,150px);aspect-ratio:1;
+  color:var(--ink);opacity:.9;animation:spin 28s linear infinite
+}
+.stamp text{font-family:var(--mono);font-size:9.6px;letter-spacing:2.6px;fill:currentColor}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media (max-width:860px){
+  .hero-note{position:static;transform:rotate(-3deg);margin-top:18px;max-width:none}
+  .hero-note svg{display:none}
+  .lede,.hero-cta{grid-column:1 / -1}
+  .stamp{left:auto;right:var(--gutter);top:clamp(200px,52vw,300px);width:84px}
+  .title .l2{padding-left:18vw}
+}
+
+/* ---------- TAPE ---------- */
+.tape{
+  background:var(--ink);color:var(--paper);transform:rotate(-1.6deg);margin:0 -20px;
+  padding:14px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:2
+}
+.tape-track{display:inline-flex;gap:0;animation:tape 48s linear infinite}
+.tape span{font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:300;padding:0 22px;display:inline-flex;align-items:center;gap:44px}
+.tape span::after{content:"";width:8px;height:11px;background:var(--chili);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;clip-path:path("M4 0 C4 0 0 5 0 7.5 a4 3.5 0 0 0 8 0 C8 5 4 0 4 0z")}
+@keyframes tape{to{transform:translateX(-50%)}}
+
+/* ---------- STORY ---------- */
+.story{padding-block:clamp(90px,12vw,170px) clamp(70px,10vw,140px)}
+.story-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.sec-no{grid-column:1 / span 2;padding-top:.6rem}
+.story h2{
+  grid-column:3 / span 8;font-family:var(--display);font-weight:400;
+  font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.035em;
+  font-variation-settings:"opsz" 144,"SOFT" 80,"WONK" 1
+}
+.story h2 em{color:var(--chili);font-weight:300}
+.story h2 .strike{position:relative;white-space:nowrap}
+.story h2 .strike svg{position:absolute;left:-4%;width:108%;top:50%;height:.5em;transform:translateY(-40%);color:var(--chili);overflow:visible}
+.story-cols{grid-column:5 / span 7;display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,48px);margin-top:clamp(36px,5vw,64px);color:var(--ink-2)}
+.story-cols p:first-child::first-letter{
+  font-family:var(--display);float:left;font-size:4.1em;line-height:.8;padding:.06em .1em 0 0;color:var(--ink);font-weight:500;font-variation-settings:"SOFT" 100,"WONK" 1
+}
+.story-aside{grid-column:1 / span 4;grid-row:2;align-self:start;margin-top:clamp(36px,5vw,64px);position:relative}
+.ring{width:min(240px,60vw);aspect-ratio:1;color:var(--chili);opacity:.32;margin-left:-14px}
+.story-aside .hand{position:absolute;top:36%;left:20%;font-size:1.65rem;transform:rotate(-8deg);color:var(--ink)}
+@media (max-width:860px){
+  .sec-no,.story h2,.story-cols,.story-aside{grid-column:1 / -1}
+  .story-cols{grid-template-columns:1fr}
+  .story-aside{grid-row:auto;display:none}
+}
+
+/* ---------- SIGNATURES ---------- */
+.sigs{padding-bottom:clamp(90px,12vw,170px)}
+.sigs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--ink);padding-top:22px;margin-bottom:clamp(40px,6vw,80px)}
+.sigs-head h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,4.4rem);letter-spacing:-.035em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 80}
+.sigs-head h2 em{font-weight:300;color:var(--chili)}
+.sig-list{list-style:none;align-items:start;display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,2.4vw,32px) 24px}
+.sig{
+  position:relative;background:var(--card);padding:clamp(22px,2.6vw,34px);
+  border-radius:3px;box-shadow:0 1px 0 rgba(36,23,15,.06), 0 18px 40px -26px rgba(36,23,15,.45);
+  transition:transform .5s var(--ease)
+}
+.sig:hover{transform:rotate(0deg) translateY(-4px)!important}
+.sig:nth-child(1){grid-column:1 / span 5;transform:rotate(-1.2deg)}
+.sig:nth-child(2){grid-column:7 / span 4;margin-top:clamp(40px,8vw,120px);transform:rotate(1.4deg)}
+.sig:nth-child(3){grid-column:2 / span 4;transform:rotate(.8deg)}
+.sig:nth-child(4){grid-column:6 / span 3;margin-top:clamp(20px,6vw,90px);transform:rotate(-1.6deg);background:var(--ink);color:var(--paper)}
+.sig:nth-child(5){grid-column:9 / span 4;margin-top:-20px;transform:rotate(-.6deg)}
+.sig-no{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(3rem,5vw,4.6rem);line-height:.9;color:var(--chili);font-variation-settings:"opsz" 144,"WONK" 1}
+.sig h3{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.2vw,2rem);line-height:1.05;letter-spacing:-.02em;margin-top:18px;font-variation-settings:"opsz" 72,"SOFT" 100}
+.sig p{color:var(--ink-2);margin-top:10px;font-size:.96rem}
+.sig:nth-child(4) p{color:rgba(242,235,221,.72)}
+.sig .tag{
+  position:absolute;top:22px;right:-10px;background:var(--butter);color:var(--ink);
+  font-family:var(--mono);font-size:.82rem;font-weight:500;padding:7px 14px 7px 18px;transform:rotate(5deg);
+  clip-path:polygon(10px 0,100% 0,100% 100%,10px 100%,0 50%)
+}
+.sig .illus{width:76px;height:56px;color:currentColor;opacity:.85;margin-top:22px}
+.sig .note{position:absolute;bottom:-34px;right:14px;font-size:1.35rem;transform:rotate(-4deg)}
+@media (max-width:860px){
+  .sig-list{grid-template-columns:1fr;gap:28px}
+  .sig:nth-child(n){grid-column:1 / -1;margin-top:0}
+  .sig:nth-child(even){margin-left:8%}
+  .sig:nth-child(odd){margin-right:6%}
+  .sig .note{position:static;display:block;margin-top:12px}
+}
+
+/* ---------- MENU ---------- */
+.menu{background:var(--paper-2);padding-block:clamp(80px,11vw,150px);position:relative}
+.menu::before{content:"";position:absolute;left:0;right:0;top:-1px;height:28px;background:var(--paper);
+  clip-path:polygon(0 0,100% 0,100% 30%,96% 70%,90% 40%,83% 85%,76% 45%,70% 75%,62% 35%,55% 80%,47% 40%,40% 70%,32% 30%,25% 85%,17% 45%,10% 70%,4% 35%,0 60%)}
+.menu-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.menu-head h2{grid-column:1 / span 7;font-family:var(--display);font-weight:400;font-size:clamp(3rem,9vw,8.5rem);line-height:.86;letter-spacing:-.05em;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1}
+.menu-head h2 em{font-weight:300;color:var(--chili)}
+.menu-head p{grid-column:9 / span 4;color:var(--ink-2)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:74px;z-index:5;padding:12px 0;background:var(--paper-2);margin-bottom:16px}
+.tab{
+  font-family:var(--sans);font-size:.92rem;min-height:44px;padding:0 18px;border-radius:999px;
+  border:1px solid var(--line);background:transparent;color:var(--ink-2);cursor:pointer;transition:all .25s var(--ease)
+}
+.tab:hover{border-color:var(--ink);color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.menu-body{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.menu-side{grid-column:1 / span 3;position:sticky;top:150px;align-self:start}
+.menu-side .big{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(2.2rem,4vw,3.6rem);line-height:1;letter-spacing:-.03em;color:var(--chili);font-variation-settings:"opsz" 144,"WONK" 1}
+.menu-side .hand{font-size:1.4rem;margin-top:14px;color:var(--ink-2);transform:rotate(-3deg);display:block}
+.menu-groups{grid-column:4 / span 9;columns:2;column-gap:clamp(32px,5vw,72px)}
+.group{break-inside:avoid;margin-bottom:44px}
+.group h3{display:flex;align-items:baseline;justify-content:space-between;gap:10px;font-family:var(--display);font-weight:500;font-size:1.45rem;letter-spacing:-.01em;border-bottom:1px solid var(--ink);padding-bottom:8px;margin-bottom:6px;font-variation-settings:"SOFT" 100}
+.group h3 .mono{color:var(--ink-3);font-weight:400}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 14px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.item .name{font-weight:500;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.item .price{font-family:var(--mono);font-size:.88rem;white-space:nowrap;align-self:baseline}
+.item .desc{grid-column:1 / -1;font-size:.88rem;color:var(--ink-3);line-height:1.45}
+.chip{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;border:1px solid currentColor}
+.chip.hot{color:var(--chili)}
+.chip.fav{color:var(--pandan)}
+.group[hidden]{display:none}
+@media (max-width:960px){
+  .menu-head h2,.menu-head p,.menu-side,.menu-groups{grid-column:1 / -1}
+  .menu-side{position:static;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .menu-groups{columns:1}
+  .tabs{top:72px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none}
+}
+
+/* ---------- OVERHEARD ---------- */
+.heard{padding-block:clamp(90px,12vw,170px)}
+.heard-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+.score{grid-column:1 / span 4}
+.score .num{font-family:var(--display);font-size:clamp(7rem,16vw,14rem);font-weight:300;line-height:.8;letter-spacing:-.06em;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1}
+.score .num sup{font-size:.22em;vertical-align:top;letter-spacing:0;color:var(--chili);font-style:italic;margin-left:.1em;position:relative;top:.4em}
+.score p{margin-top:18px;color:var(--ink-2);max-width:28ch}
+.quotes{grid-column:6 / span 7;list-style:none}
+.quotes li{padding:28px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:18px}
+.quotes li:last-child{border-bottom:1px solid var(--line)}
+.quotes li:nth-child(2){padding-left:clamp(0px,6vw,90px)}
+.quotes .q{font-family:var(--display);font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.2;font-weight:350;letter-spacing:-.015em;font-variation-settings:"opsz" 72,"SOFT" 60}
+.quotes .q::before{content:"“";color:var(--chili)}
+.quotes .q::after{content:"”";color:var(--chili)}
+.quotes .who{font-family:var(--mono);font-size:.75rem;color:var(--ink-3);margin-top:10px;letter-spacing:.06em;text-transform:uppercase}
+.quotes .idx{font-family:var(--mono);font-size:.75rem;color:var(--chili);padding-top:.7em}
+.press{margin-top:36px;display:inline-flex;align-items:center;gap:12px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px;font-size:.95rem}
+.press:hover{color:var(--chili);border-color:var(--chili)}
+.press svg{width:16px;height:16px}
+@media (max-width:860px){ .score,.quotes{grid-column:1 / -1} .quotes li:nth-child(2){padding-left:0} }
+
+/* ---------- VISIT ---------- */
+.visit{background:var(--ink);color:var(--paper);padding-block:clamp(80px,11vw,150px) 0;position:relative;overflow:hidden}
+.visit .eyebrow{color:rgba(242,235,221,.6)}
+.visit-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.visit h2{grid-column:1 / span 8;font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,6.5vw,6rem);line-height:.95;letter-spacing:-.045em;font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;margin-top:18px}
+.visit h2 em{color:var(--butter);font-weight:300}
+.visit .hand{grid-column:9 / span 4;align-self:end;color:var(--butter);font-size:1.7rem;transform:rotate(-5deg)}
+.info{grid-column:1 / span 5;margin-top:clamp(40px,6vw,72px)}
+.info address{font-style:normal;font-family:var(--display);font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.25;font-weight:350;letter-spacing:-.01em}
+.hours{margin-top:32px;list-style:none;border-top:1px solid rgba(242,235,221,.2)}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(242,235,221,.12);font-size:.95rem;color:rgba(242,235,221,.75)}
+.hours li span:last-child{font-family:var(--mono);font-size:.84rem}
+.hours li.today{color:var(--paper)}
+.hours li.today span:first-child::after{content:" — today";font-family:var(--hand);color:var(--butter);font-size:1.25rem;margin-left:6px}
+.hours li.closed span:last-child{color:var(--butter)}
+.visit-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.visit .btn-ink{background:var(--paper);color:var(--ink)}
+.visit .btn-ink:hover{background:var(--butter)}
+.visit .btn-line{border-color:rgba(242,235,221,.5);color:var(--paper)}
+.visit .btn-line:hover{background:var(--paper);color:var(--ink)}
+.map{grid-column:7 / span 6;margin-top:clamp(40px,6vw,72px);position:relative;transform:rotate(1.2deg)}
+.map-frame{background:var(--paper);padding:10px 10px 46px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.map iframe{width:100%;aspect-ratio:4/3.4;border:0;display:block;filter:sepia(.35) saturate(.8) contrast(.95)}
+.map .cap{position:absolute;bottom:10px;left:18px;color:var(--ink);font-size:1.45rem}
+.map .pin-tape{position:absolute;top:-14px;left:40%;width:110px;height:30px;background:rgba(232,182,73,.75);transform:rotate(-4deg)}
+.socials{display:flex;gap:10px;margin-top:22px}
+.socials a{width:46px;height:46px;border-radius:50%;border:1px solid rgba(242,235,221,.35);display:grid;place-items:center;transition:all .25s var(--ease)}
+.socials a:hover{background:var(--paper);color:var(--ink);transform:rotate(-8deg)}
+.socials svg{width:19px;height:19px}
+.bigmark{
+  font-family:var(--display);font-weight:500;font-size:clamp(5rem,23vw,22rem);line-height:.78;letter-spacing:-.06em;
+  white-space:nowrap;margin-top:clamp(70px,10vw,140px);color:var(--paper);transform:translateY(.16em);
+  font-variation-settings:"opsz" 144,"SOFT" 100,"WONK" 1;user-select:none
+}
+.bigmark em{font-style:italic;font-weight:300;color:var(--chili)}
+@media (max-width:860px){ .visit h2,.visit .hand,.info,.map{grid-column:1 / -1} .visit .hand{margin-top:6px} }
+
+footer{background:var(--ink);color:rgba(242,235,221,.55);border-top:1px solid rgba(242,235,221,.14);position:relative;z-index:1}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px}
+footer a{color:rgba(242,235,221,.8);text-decoration:none}
+footer a:hover{color:var(--paper)}
+
+/* floating whatsapp (mobile) */
+.fab{
+  position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;
+  background:var(--chili);color:#fff;display:none;place-items:center;box-shadow:0 12px 26px -8px rgba(142,50,18,.6);
+  transform:translateY(120px);transition:transform .4s var(--ease)
+}
+.fab svg{width:26px;height:26px}
+.fab.show{transform:none}
+@media (max-width:860px){ .fab{display:grid} }
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease), transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.sig.rv.in:nth-child(1){transform:rotate(-1.2deg)}
+.sig.rv.in:nth-child(2){transform:rotate(1.4deg)}
+.sig.rv.in:nth-child(3){transform:rotate(.8deg)}
+.sig.rv.in:nth-child(4){transform:rotate(-1.6deg)}
+.sig.rv.in:nth-child(5){transform:rotate(-.6deg)}
+.draw path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s var(--ease) .3s}
+.draw.in path, .in .draw path{stroke-dashoffset:0}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .draw path{stroke-dashoffset:0}
+  .drop{opacity:0}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Main">
+  <a href="#top" class="brand" aria-label="Drip Oh Eatery, home">
+    <svg viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0C6 0 0 7.5 0 11a6 5 0 0 0 12 0C12 7.5 6 0 6 0z" fill="#B4441C"/></svg>
+    Drip <em>Oh</em>
+  </a>
+  <ul>
+    <li><a href="#story">The house</a></li>
+    <li><a href="#signatures">Signatures</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#visit">Visit</a></li>
+  </ul>
+  <a class="btn btn-ink wa-link" href="https://wa.me/601124197413" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.1 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.3z"/></svg>
+    <span>WhatsApp us</span>
+  </a>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<header class="hero wrap">
+  <div class="hero-top">
+    <p class="eyebrow">Kedai makan &amp; coffee — Jalan Dato Mahmud, Ipoh</p>
+    <p class="eyebrow status"><span class="dot" id="dot"></span><span id="status-text">Tue–Sun · 12pm – 10pm</span></p>
+  </div>
+
+  <h1 class="title">
+    <span class="l1">Drip,<svg class="drop" viewBox="0 0 12 16" aria-hidden="true"><path d="M6 0C6 0 0 7.5 0 11a6 5 0 0 0 12 0C12 7.5 6 0 6 0z" fill="#B4441C"/></svg></span>
+    <span class="l2">oh.</span>
+    <span class="sr-only">Drip Oh Eatery</span>
+  </h1>
+
+  <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+    <text><textPath href="#circ">BIG PLATES · SLOW COFFEE · GOOD SONGS · </textPath></text>
+    <path d="M60 44C60 44 51 56 51 62a9 8 0 0 0 18 0C69 56 60 44 60 44z" fill="#B4441C"/>
+  </svg>
+
+  <p class="hand hero-note">portions are huge — bring a friend
+    <svg viewBox="0 0 70 46" fill="none" aria-hidden="true" class="draw"><path pathLength="1" d="M4 4c14 4 34 6 46 22 4 6 6 11 6 16M56 42l-8-6M56 42l5-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </p>
+
+  <div class="hero-grid">
+    <p class="lede">A new <b>kedai makan</b> in Ipoh town with a chill soul — nasi goreng petai, mee kari and ayam dara on one side, creamy pasta, iced lattes and a proper tiramisu on the other.</p>
+    <div class="hero-cta">
+      <a class="btn btn-ink wa-link" href="https://wa.me/601124197413" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Book a table on WhatsApp
+      </a>
+      <a class="btn btn-line" href="#menu">See the menu</a>
+      <div class="rating" aria-label="Rated 4.8 out of 5 from 550 Google reviews">
+        <strong>4.8</strong>
+        <div>
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z"/></svg><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L10 15l-5.4 2.9 1-6.1L1.2 7.5l6.1-.9z"/></svg>
+          </div>
+          <span class="mono">550 Google reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tape" aria-hidden="true">
+  <div class="tape-track">
+    <span>Nasi Goreng Petai</span><span>Mee Kari</span><span>Spanish Latte</span><span>Aglio Olio Seafood</span><span>Ayam Dara</span><span>Classic Tiramisu</span><span>Deep Ocean Mocktail</span><span>Chicken Chop</span>
+    <span>Nasi Goreng Petai</span><span>Mee Kari</span><span>Spanish Latte</span><span>Aglio Olio Seafood</span><span>Ayam Dara</span><span>Classic Tiramisu</span><span>Deep Ocean Mocktail</span><span>Chicken Chop</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story wrap" id="story" aria-labelledby="story-h">
+  <div class="story-grid">
+    <p class="sec-no eyebrow rv">No. 01 — The house</p>
+    <h2 id="story-h" class="rv">Not a café. <span class="strike">Not quite<svg viewBox="0 0 200 20" preserveAspectRatio="none" fill="none" aria-hidden="true" class="draw"><path pathLength="1" d="M2 12C40 6 90 14 130 8s50 2 66 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span> a kopitiam. <em>Somewhere</em> warmly in between.</h2>
+
+    <div class="story-aside" aria-hidden="true">
+      <svg class="ring" viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="9" stroke-dasharray="380 30 60 20" transform="rotate(-30 100 100)"/><circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="2" opacity=".6"/></svg>
+      <span class="hand">mug was here</span>
+    </div>
+
+    <div class="story-cols rv">
+      <p>Drip Oh is a neighbourhood kedai makan on Jalan Dato Mahmud, built for long lunches and slower dinners. The kitchen cooks the food Ipoh grew up on — clear-broth mee sup, creamy kari, fragrant nasi goreng with petai — next to the café plates people cross town for.</p>
+      <p>The plates come big (most can feed two), the coffee is pulled with care, and the playlist is, by popular vote, really good. Come hungry, stay for a second latte, and say hi to the owners on your way out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURES -->
+<section class="sigs wrap" id="signatures" aria-labelledby="sig-h">
+  <div class="sigs-head">
+    <h2 id="sig-h">Five plates we’d <em>order again.</em></h2>
+    <p class="eyebrow">No. 02 — House signatures</p>
+  </div>
+  <ol class="sig-list">
+    <li class="sig rv">
+      <span class="tag">RM 21.75</span>
+      <div class="sig-no">i.</div>
+      <h3>Nasi Putih Ayam Dara</h3>
+      <p>Half a kampung chicken, white rice, sambal, kari and cool timun. The one to order first.</p>
+      <svg class="illus draw" viewBox="0 0 76 56" fill="none" aria-hidden="true"><path pathLength="1" d="M4 30h68M8 30c2 14 14 22 30 22s28-8 30-22M24 28c0-8 6-14 14-14s14 6 14 14M30 10c2-3-2-5 0-8M38 10c2-3-2-5 0-8M46 10c2-3-2-5 0-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </li>
+    <li class="sig rv">
+      <span class="tag">RM 19.50</span>
+      <div class="sig-no">ii.</div>
+      <h3>Mee Kari</h3>
+      <p>Noodles in a creamy curry broth with tauhu, a boiled egg and fresh herbs. Regulars’ favourite.</p>
+      <svg class="illus draw" viewBox="0 0 76 56" fill="none" aria-hidden="true"><path pathLength="1" d="M6 24h64c0 16-14 28-32 28S6 40 6 24zM20 24c4-6 8 6 12 0s8 6 12 0 8 6 12 0M56 4L40 22M64 6L46 22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </li>
+    <li class="sig rv">
+      <span class="tag">RM 22.50</span>
+      <div class="sig-no">iii.</div>
+      <h3>Nasi Goreng Petai</h3>
+      <p>Wok-fried rice with prawns and petai, pedas and properly fragrant. Not for the faint-hearted.</p>
+      <svg class="illus draw" viewBox="0 0 76 56" fill="none" aria-hidden="true"><path pathLength="1" d="M4 34c8 12 22 18 34 18s26-6 34-18M14 34c4-10 14-16 24-16s20 6 24 16M28 26a3 3 0 1 0 0 .1M44 24a3 3 0 1 0 0 .1M36 30a3 3 0 1 0 0 .1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </li>
+    <li class="sig rv">
+      <span class="tag">RM 20.25</span>
+      <div class="sig-no" style="color:var(--butter)">iv.</div>
+      <h3>Classic Tiramisu</h3>
+      <p>Nespresso-soaked ladyfingers, soft mascarpone, a heavy dusting of cocoa.</p>
+      <svg class="illus draw" viewBox="0 0 76 56" fill="none" aria-hidden="true"><path pathLength="1" d="M10 20l56-8v36H10zM10 30h56M10 40h56M22 14c0-4 4-4 4-8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </li>
+    <li class="sig rv">
+      <span class="tag">RM 18.00</span>
+      <div class="sig-no">v.</div>
+      <h3>Spanish Latte</h3>
+      <p>Espresso and milk with a slow, condensed sweetness. Iced, ideally, at 3pm.</p>
+      <svg class="illus draw" viewBox="0 0 76 56" fill="none" aria-hidden="true"><path pathLength="1" d="M22 12h32l-4 40H26zM24 26h28M30 12L34 2h8M32 34h4v4h-4zM42 40h4v4h-4z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="hand note">+ extra shot? RM 7.50</span>
+    </li>
+  </ol>
+</section>
+
+<!-- MENU -->
+<section class="menu" id="menu" aria-labelledby="menu-h">
+  <div class="wrap">
+    <div class="menu-head">
+      <h2 id="menu-h">The <em>whole</em><br>menu.</h2>
+      <p>Prices in Ringgit. Portions are generous — most plates share happily between two. Ask the counter about today’s specials.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Menu sections">
+      <button class="tab" role="tab" aria-selected="true" data-filter="all">Everything</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="eat">Makan</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="drink">Minum</button>
+      <button class="tab" role="tab" aria-selected="false" data-filter="sweet">Something sweet</button>
+    </div>
+
+    <div class="menu-body">
+      <aside class="menu-side" aria-hidden="true">
+        <div class="big" id="menu-count">49 things</div>
+        <span class="hand">…and nothing<br>over RM 37.</span>
+      </aside>
+      <div class="menu-groups" id="menu-groups"></div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERHEARD -->
+<section class="heard wrap" aria-labelledby="heard-h">
+  <div class="heard-grid">
+    <div class="score rv">
+      <p class="eyebrow" id="heard-h">No. 03 — Overheard</p>
+      <div class="num" aria-label="4.8 stars">4.8<sup>★</sup></div>
+      <p>From 550 reviews on Google Maps — mostly about the portions, the people, and the music.</p>
+      <a class="press" href="https://www.facebook.com/TourismPerakMalaysia/posts/jom-singgah-ke-drip-oh-eatery-kedai-makan-baru-di-bandar-ipoh-dengan-konsep-chil/957685306399872/" target="_blank" rel="noopener">
+        As featured by Tourism Perak
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg>
+      </a>
+    </div>
+    <ul class="quotes">
+      <li class="rv"><span class="idx">01</span><div><p class="q">The cafe owner personally treated us very well and was super friendly.</p><p class="who">Daniel · Google review</p></div></li>
+      <li class="rv"><span class="idx">02</span><div><p class="q">The portions are very big — you can order one and share it between two.</p><p class="who">Sofia · Google review</p></div></li>
+      <li class="rv"><span class="idx">03</span><div><p class="q">The song playlist is also really good, I love it!</p><p class="who">Sofia · Google review</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit" aria-labelledby="visit-h">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div style="grid-column:1 / -1"><p class="eyebrow">No. 04 — Come by</p></div>
+      <h2 id="visit-h" class="rv">Pull up a chair on <em>Jalan Dato Mahmud.</em></h2>
+      <p class="hand rv">closed Mondays — we rest too ✿</p>
+
+      <div class="info rv">
+        <address>50, Jalan Dato Mahmud,<br>31650 Ipoh, Perak</address>
+        <ul class="hours" id="hours">
+          <li data-d="2"><span>Tuesday</span><span>12:00 – 22:00</span></li>
+          <li data-d="3"><span>Wednesday</span><span>12:00 – 22:00</span></li>
+          <li data-d="4"><span>Thursday</span><span>12:00 – 22:00</span></li>
+          <li data-d="5"><span>Friday</span><span>12:00 – 22:00</span></li>
+          <li data-d="6"><span>Saturday</span><span>12:00 – 22:00</span></li>
+          <li data-d="0"><span>Sunday</span><span>12:00 – 22:00</span></li>
+          <li data-d="1" class="closed"><span>Monday</span><span>Closed</span></li>
+        </ul>
+        <div class="visit-actions">
+          <a class="btn btn-ink wa-link" href="https://wa.me/601124197413" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+            011-2419 7413
+          </a>
+          <a class="btn btn-line" href="https://maps.app.goo.gl/3o9jgQvYHhAmMgcU8" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+            Get directions
+          </a>
+        </div>
+        <div class="socials">
+          <a href="https://www.instagram.com/drip.oheatery/" target="_blank" rel="noopener" aria-label="Drip Oh Eatery on Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.facebook.com/TourismPerakMalaysia/posts/jom-singgah-ke-drip-oh-eatery-kedai-makan-baru-di-bandar-ipoh-dengan-konsep-chil/957685306399872/" target="_blank" rel="noopener" aria-label="Drip Oh Eatery featured on Facebook by Tourism Perak">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8z"/></svg>
+          </a>
+          <a class="wa-link" href="https://wa.me/601124197413" target="_blank" rel="noopener" aria-label="Message Drip Oh Eatery on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <figure class="map rv">
+        <span class="pin-tape" aria-hidden="true"></span>
+        <div class="map-frame">
+          <iframe title="Map to Drip Oh Eatery, 50 Jalan Dato Mahmud, Ipoh" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Drip%20Oh%20Eatery%2C%2050%20Jalan%20Dato%20Mahmud%2C%20Ipoh&ll=4.5863721,101.0829995&z=16&output=embed"></iframe>
+        </div>
+        <figcaption class="hand cap">← see you here, makan dulu</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="bigmark" aria-hidden="true">Drip <em>Oh</em>.</div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap mono">
+    <span>© <span id="yr">2026</span> Drip Oh Eatery · Ipoh, Perak</span>
+    <span><a href="https://www.instagram.com/drip.oheatery/" target="_blank" rel="noopener">@drip.oheatery</a> · <a class="wa-link" href="https://wa.me/601124197413" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="fab wa-link" id="fab" href="https://wa.me/601124197413" target="_blank" rel="noopener" aria-label="Message Drip Oh Eatery on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.1 0 12 0 5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.3z"/></svg>
+</a>
+
+<script>
+/* WhatsApp prefilled message */
+(function(){
+  var msg = encodeURIComponent("Hi Drip Oh Eatery! Saya nak tanya / I'd like to ask about ");
+  document.querySelectorAll('.wa-link').forEach(function(a){ a.href = 'https://wa.me/601124197413?text=' + msg; });
+})();
+
+/* Menu — from the owner's menu sheet */
+var MENU = [
+  {cat:"Rice", kind:"eat", items:[
+    ["Nasi Putih Ayam Dara","Half chicken. Nasi putih, ayam kampung, sambal, kari & timun","21.75","fav"],
+    ["Nasi Goreng Ayam Dara","Half chicken","24.75"],
+    ["Nasi Goreng Petai","Nasi goreng petai dengan udang & pedas beraroma","22.50","hot"],
+    ["Nasi Goreng Seafood","","19.50"],
+    ["Nasi Goreng Udang","","18.00"]
+  ]},
+  {cat:"Mee", kind:"eat", items:[
+    ["Mee Kari","Mee dalam kuah kari berkrim, tauhu, telur rebus & herba","19.50","fav"],
+    ["Mee Sup","Mee telur dalam sup jernih, dengan fish cake, herba segar & bawang goreng","19.50"],
+    ["Bihun Sup","Bihun dalam sup jernih berperisa, dengan fish cake, herba segar & bawang goreng","19.50"],
+    ["Kuey Teow Sup","Kuey teow dalam sup jernih, dengan fish cake, herba segar & bawang goreng","19.50"]
+  ]},
+  {cat:"Pasta", kind:"eat", items:[
+    ["Aglio Olio Seafood","Seafood in a light, aromatic garlic oil","30.00"],
+    ["Thai Pasta","","28.50"],
+    ["Mac & Cheese","","22.50","hot"]
+  ]},
+  {cat:"Western", kind:"eat", items:[
+    ["Chicken Chop","Chicken chop dengan sos black pepper","36.75"]
+  ]},
+  {cat:"Sides", kind:"eat", items:[
+    ["Cheesy Nachos","","22.50","hot"],
+    ["Nugget Tempura","9 pcs","15.00"],
+    ["Cheesy Wedges","","15.00"],
+    ["Cheesy Fries","","15.00"],
+    ["Baby Sausage","","15.00"],
+    ["Fish Finger","","15.00"],
+    ["French Fries","","12.00"]
+  ]},
+  {cat:"Dessert", kind:"sweet", items:[
+    ["Classic Tiramisu","Ladyfinger nespresso, mascarpone lembut & ditabur serbuk koko","20.25","fav"]
+  ]},
+  {cat:"Coffee", kind:"drink", items:[
+    ["Spanish Latte","","18.00","fav"],
+    ["Mocha","","18.00"],
+    ["Vanilla Latte","","16.50"],
+    ["Caramel Latte","","16.50"],
+    ["Iced Latte","","13.50"],
+    ["Hot Latte","","13.50"],
+    ["Strawberry Iced Coffee","Iced coffee with strawberry, sweet & silky","12.00"],
+    ["Iced Americano","","10.50"],
+    ["Iced Coffee","","7.50"],
+    ["Hot Kopi","","4.50"],
+    ["Hot Kopi O","","3.75"],
+    ["Extra Shot","Add to any coffee","7.50"]
+  ]},
+  {cat:"Mocktail", kind:"drink", items:[
+    ["Strawberry Milkshake","","15.00"],
+    ["Deep Ocean Mocktail","","12.00"],
+    ["Sour Palm Soda","","12.00"],
+    ["Strawberry Peach Mocktail","","12.00"],
+    ["Honey Peach Mocktail","","12.00"],
+    ["Strawberry Mocktail","","12.00"]
+  ]},
+  {cat:"Tea & Others", kind:"drink", items:[
+    ["Iced Lemon Tea","","10.50"],
+    ["Peach Tea","","10.50"],
+    ["Bandung Soda","","10.50"],
+    ["Honey Lemon","","9.00"],
+    ["Green Tea","","9.00"],
+    ["Iced Milo","","9.00"],
+    ["Iced Teh","","7.50"],
+    ["A&W Float","","7.50"],
+    ["Spritzer Mineral Water","","6.00"]
+  ]}
+];
+
+(function(){
+  var host = document.getElementById('menu-groups');
+  var esc = function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')};
+  host.innerHTML = MENU.map(function(g){
+    return '<div class="group" data-kind="'+g.kind+'"><h3>'+esc(g.cat)+' <span class="mono">'+String(g.items.length).padStart(2,'0')+'</span></h3>'+
+      g.items.map(function(it){
+        var chip = it[3]==='hot' ? ' <span class="chip hot">Spicy</span>' : it[3]==='fav' ? ' <span class="chip fav">House fave</span>' : '';
+        return '<div class="item"><span class="name">'+esc(it[0])+chip+'</span><span class="price">RM '+it[2]+'</span>'+
+          (it[1] ? '<span class="desc">'+esc(it[1])+'</span>' : '')+'</div>';
+      }).join('')+'</div>';
+  }).join('');
+
+  var total = MENU.reduce(function(n,g){return n+g.items.length},0);
+  var count = document.getElementById('menu-count');
+  var label = {all:'things', eat:'to eat', drink:'to drink', sweet:'sweet thing'};
+  count.textContent = total + ' things';
+
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click', function(){
+      var f = t.dataset.filter, n = 0;
+      document.querySelectorAll('.tab').forEach(function(o){o.setAttribute('aria-selected', o===t)});
+      host.querySelectorAll('.group').forEach(function(g){
+        var show = f==='all' || g.dataset.kind===f;
+        g.hidden = !show;
+        if(show) n += g.querySelectorAll('.item').length;
+      });
+      count.textContent = n + ' ' + label[f];
+    });
+  });
+})();
+
+/* Open / closed — Malaysia time (UTC+8), Tue–Sun 12:00–22:00 */
+(function(){
+  var now = new Date(Date.now() + 8*3600*1000);
+  var d = now.getUTCDay(), m = now.getUTCHours()*60 + now.getUTCMinutes();
+  var open = d !== 1 && m >= 720 && m < 1320;
+  var dot = document.getElementById('dot'), txt = document.getElementById('status-text');
+  if(open){ dot.classList.add('open'); txt.textContent = 'Open now · until 10pm'; }
+  else if(d !== 1 && m < 720){ txt.textContent = 'Opens today at 12pm'; }
+  else { txt.textContent = (d === 0 || d === 1) ? 'Closed · opens Tuesday 12pm' : 'Closed · opens tomorrow 12pm'; }
+  var li = document.querySelector('#hours li[data-d="'+d+'"]');
+  if(li) li.classList.add('today');
+  document.getElementById('yr').textContent = now.getUTCFullYear();
+})();
+
+/* Nav border, FAB, reveals */
+(function(){
+  var nav = document.getElementById('nav'), fab = document.getElementById('fab');
+  var onScroll = function(){
+    var y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 10);
+    fab.classList.toggle('show', y > window.innerHeight * .6);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var els = document.querySelectorAll('.rv, .draw');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
